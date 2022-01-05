@@ -1,24 +1,9 @@
-"""
-    recommend 함수 자체는 movies.views.py 안에 정의했었습니다. 
-    적당한 url 지정해서 movies.urls.py 에 recommend 추가하면 될 것 같아요. 
-    삽질해가면서 짜서 그런지 json 관련 코드가 좀 지저분합니다
-    
-    성북구/동대문구 기준 오늘 날씨를 받아온 뒤에 날씨 상태에 따라 장르 하나를 골라서,
-    해당 장르 영화 중에 평점이 높은 영화 10개를 추천해주는 식입니다. 
-    (간략하게 주석 달아논거 참고해주세요)
-
-    응답 데이터 형식 + 어떻게 구현할 지 같이 얘기 나눠봐요!
-
-"""
 from .models import Genre
 import requests, render
 import json
 from datetime import date
 
-# movies.views.py 
-
 @require_safe
-# 데코레이터 부분 수정 필요할 것 같습니다. 
 def recommended(request):
 
     url = 'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst'

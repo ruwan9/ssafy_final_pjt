@@ -36,7 +36,7 @@ def create_movie_data():
   with open('fixtures/tmdb.json', 'r+') as f:
     movie_data = json.load(f)
 
-  for page in range(1, 50):
+  for page in range(1, 200):
     # print(str(page))
     movie_url = f'{BASE_URL}/movie/popular?api_key={API_KEY}&language=ko-KR&page={str(page)}'
 
